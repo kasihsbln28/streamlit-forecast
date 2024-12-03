@@ -2,14 +2,14 @@
 import pickle
 import streamlit as st
 import pandas as pd
-import matplotlib.pyplot as plt # iimpor matplotlib untuk membuat plot
+import matplotlib.pyplot as plt # impor matplotlib untuk membuat plot
 
 # inisiasi Model
-model = pickle.load(open('prediksi_co2.sav','rb')) # open file yang sebelumnya sudah disimpan, yaotu file prediksi_co2.sav
+model = pickle.load(open('prediksi_co2.sav','rb')) # open file yang sebelumnya sudah disimpan dengan nama prediksi_co2.sav
 
 # memanggil dataset
 df = pd.read_excel('CO2 dataset.xlsx')
-# konvert data Year ke dalam bentuk date time
+# transformasi data Year ke dalam bentuk date time
 df['Year'] = pd.to_datetime(df['Year'], format='%Y')
 df.set_index(['Year'], inplace=True)
 
